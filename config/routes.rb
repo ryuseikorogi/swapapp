@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  get 'posts', to: 'posts#index'
+  get 'swapapp/index'
+  root "swapapp#index"
+  resources :donations, only: :index
 end
