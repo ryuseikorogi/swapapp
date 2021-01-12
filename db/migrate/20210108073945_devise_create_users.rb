@@ -1,12 +1,18 @@
 # frozen_string_literal: true
 
-class DeviseCreateusers < ActiveRecord::Migration[6.0]
+class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
+      t.string :nickname,           null: false
+      t.string :first_name,         null: false 
+      t.string :family_name,        null: false 
+      t.string :first_name_kana,    null: false 
+      t.string :family_name_kana,   null: false 
+      t.date :birth_day,            null: false
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
