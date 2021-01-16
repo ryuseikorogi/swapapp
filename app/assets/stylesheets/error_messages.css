@@ -10,6 +10,11 @@
   color: rgb(182, 48, 0);
 }
 
+.field {
+  text-align: center;
+}
+
 .error-explanation {
 display: flex;
+text-align: center;
 }
