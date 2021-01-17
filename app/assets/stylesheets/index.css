@@ -5,5 +5,32 @@ float
 }
 .message a {
   text-decoration: none;
-  color: ;
+  color: #000000;
+}
+
+h2 {
+text-align-last: center;
+}
+
+.form-text-wrap {
+  width: 100%;
+  margin:0 auto;
+}
+
+.form-text-wrap select{
+  display: flex;
+  margin: 0 auto;
+}
+
+.input-birth-wrap p{
+position :center;
+}
+
+.birthday{
+  margin: 0 auto;
+}
+
+.actions {
+  text-align: center;
+  margin: 10px;
 }

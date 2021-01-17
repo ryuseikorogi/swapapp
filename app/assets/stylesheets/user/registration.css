@@ -8,12 +8,12 @@
 }
 
 .input-birth-wrap {
-  padding: 0 33%;
+  text-align: center;
 }
 
 .input-birth-wrap>select {
   width: 75px;
-  margin-top: 5px;
+  margin-top: 5px 0 0 0;
   height: 45px;
   padding-left: 10px;
   border-radius: 4px;
@@ -23,17 +23,27 @@
   cursor: pointer;
 }
 
-.input-birth-wrap {
+.input-birth-wrap p{
+  display: block;
   display: flex;
-  justify-content: space-around;
+  float
   line-height: 60px;
-  margin: 0 auto;
-}
-
-.field_with_errors {
-display: flex;
+  margin: 0;
 }
 
 .error-alert {
 margin: 0 auto;
+}
+
+.form-text-wrap {
+  display: block;
+  display:flex;
+}
+
+.field_with_errors {
+  display: contents;
+  }
+
+#text_explanation ul {
+  text-align: center;
 }
