@@ -51,10 +51,10 @@ Things you may want to cover:
 ｜ cateory_id | integer | null: false |
 ｜ name | string | null: false |
 | user | references | null: false, foreign_key: true |
-| item_condition_id | integer | null: false |
+| post_condition_id | integer | null: false |
 | prefecture_id | integer | null: false |
 | days_arrive_item_id | integer | null: false |
-| item_discription | text | null: false |
+| post_discription | text | null: false |
 
 ### Assotiation
 
@@ -71,10 +71,10 @@ Things you may want to cover:
 ### Assotiation
 
 - belongs_to :user
-- belongs_to :item
-- has_one :shipping_addres
+- belongs_to :post
+- has_one :posts_addres
 
-### Shipping_addresses
+### posts_addresses テーブル
 
 | Column | Type | option |
 | prefecture_id | string | null: false |
@@ -83,8 +83,37 @@ Things you may want to cover:
 | zip_code | string | null: false |
 | phone_number | string | null: false |
 | address | string | null: false, foreign_key:true |
-| purchase | reference | null: false, foreign_key:true |
+| swap | reference | null: false, foreign_key:true |
 
 ### Assotiation
 
-- belongs_to :purchase
+- belongs_to :swap
+
+### comments テーブル
+
+| user | references | null: false, foreign_key: true |
+| post | references | null: false, foreign_key: true |
+| comments | text | null: false |
+
+### Assotiation
+
+- has_many :user
+- belongs_to :posts
+
+### likes テーブル
+
+| user | references | null: false, foreign_key: true |
+| post | references | null: false, foreign_key: true |
+
+### Assotiation
+
+- has_many :user
+- belongs_to :posts
+
+### category_id テーブル
+
+｜ category_id | integer | null: false |
+
+### Assotiation
+
+- belongs_to :posts
