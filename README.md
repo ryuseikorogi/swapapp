@@ -91,6 +91,7 @@ Things you may want to cover:
 
 ### comments テーブル
 
+| Column | Type | option |
 | user | references | null: false, foreign_key: true |
 | post | references | null: false, foreign_key: true |
 | comments | text | null: false |
@@ -102,6 +103,7 @@ Things you may want to cover:
 
 ### likes テーブル
 
+| Column | Type | option |
 | user | references | null: false, foreign_key: true |
 | post | references | null: false, foreign_key: true |
 
@@ -112,6 +114,7 @@ Things you may want to cover:
 
 ### category_id テーブル
 
+| Column | Type | option |
 ｜ category_id | integer | null: false |
 
 ### Assotiation
