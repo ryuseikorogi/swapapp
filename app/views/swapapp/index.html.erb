@@ -1,28 +1,29 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
   <header>
-   <title>swapapp</title>
-   <p>あなたの欲しいがきっと見つかる</p>
- </header>
-<% if user_signed_in? %>
-<div class="message">
-<%= "#{current_user.nickname} is already logged in." %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-</div>
-<% else %>
-<div class="message">
-<%= link_to "Create your account!", new_user_registration_path %>
-</div>
-<div class="message">
-<%= link_to "Login", new_user_session_path %>
-</div>
-<footer>
-</footer>
+    <title>swapapp</title>
+    <p>あなたの欲しいがきっと見つかる</p>
+  </header>
+  <% if user_signed_in? %>
+  <div class="message">
+    <%= "#{current_user.nickname} is already logged in." %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  </div>
+  <% else %>
+  <div class="message">
+    <%= link_to "Create your account!", new_user_registration_path %>
+  </div>
+  <div class="message">
+    <%= link_to "Login", new_user_session_path %>
+  </div>
+  <footer>
+  </footer>
 </body>
 
 <% end %>

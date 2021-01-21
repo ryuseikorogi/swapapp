@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  def index
-    @post = Post.find(1) 
+  test "should get index" do
+    get posts_index_url
+    assert_response :success
   end
+
 end
