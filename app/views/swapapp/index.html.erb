@@ -2,7 +2,15 @@
    <title>swapapp</title>
    <p>あなたの欲しいがきっと見つかる</p>
  </header>
+ <div class="trigger-container">
+ </div>
+ <button class="menu-trigger">
+   <span></span>
+   <span></span>
+   <span></span>
+ </button>
 
+ </header>
  <% if user_signed_in? %>
  <div class="message">
    <%= "#{current_user.nickname} is already logged in." %>
