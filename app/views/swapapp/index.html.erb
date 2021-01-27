@@ -2,15 +2,19 @@
    <title>swapapp</title>
    <p>あなたの欲しいがきっと見つかる</p>
  </header>
- <div class="trigger-container">
- </div>
- <button class="menu-trigger">
-   <span></span>
-   <span></span>
-   <span></span>
- </button>
 
- </header>
+ <div class="trigger-container">
+   <button class="menu-trigger">
+     <span></span>
+     <span></span>
+     <span></span>
+   </button>
+ </div>
+
+ <div class="top-image-container">
+   <img src="assets/images/for-swapapp.jpg" alt="ヒーローイメージです。">
+ </div>
+
  <% if user_signed_in? %>
  <div class="message">
    <%= "#{current_user.nickname} is already logged in." %>
@@ -25,9 +29,6 @@
  </div>
  <div class="message">
    <%= link_to "Login", new_user_session_path %>
- </div>
- <div class="top-image-container">
-   <%= image_tag 'for-swapapp'%>
  </div>
  <!--<%= link_to root_path do %>
  <%= image_tag '' ,class: "link-category1"%>
