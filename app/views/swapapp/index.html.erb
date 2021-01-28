@@ -1,34 +1,54 @@
  <header>
+
    <title>swapapp</title>
    <p>あなたの欲しいがきっと見つかる</p>
+   <% if user_signed_in? %>
+   <div class="message">
+     <%= "#{current_user.nickname} is already logged in." %>
+     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+   </div>
+
+   <%= link_to root_path do %>
+   <%= image_tag 'note-pencil.jpeg' ,class: "link-category1"%>
+   <% end %>
+
+   <% else %>
+   <div class="message">
+     <%= link_to "Create your account!", new_user_registration_path %>
+   </div>
+   <div class="message">
+     <%= link_to "Login", new_user_session_path %>
+   </div>
+
  </header>
 
  <div class="trigger-container">
-   <button class="menu-trigger">
-     <span></span>
-     <span></span>
-     <span></span>
-   </button>
+ </div>
+
+ <!-- ナビメニュー -->
+ <nav id="nav">
+   <ul>
+     <li><a href="#">SUMPLE1</a></li>
+     <li><a href="#">SUMPLE2</a></li>
+     <li><a href="#">SUMPLE3</a></li>
+   </ul>
+ </nav>
+
+ <!-- ハンバーガーメニュー
+ のアイコン -->
+ <div id="hamburger">
+   　
+   <!-- 1番上の線 -->
+   <span class="inner_line" id="line1"></span>
+   　
+   <!-- 真ん中の線 -->
+   <span class="inner_line" id="line2"></span>
+   　
+   <!-- 1番下の線 -->
+   <span class="inner_line" id="line3"></span>
  </div>
 
  <div class="top-image-container">
-   <img src="assets/images/for-swapapp.jpg" alt="ヒーローイメージです。">
- </div>
-
- <% if user_signed_in? %>
- <div class="message">
-   <%= "#{current_user.nickname} is already logged in." %>
-   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
- </div>
- <%= link_to root_path do %>
- <%= image_tag 'note-pencil.jpeg' ,class: "link-category1"%>
- <% end %>
- <% else %>
- <div class="message">
-   <%= link_to "Create your account!", new_user_registration_path %>
- </div>
- <div class="message">
-   <%= link_to "Login", new_user_session_path %>
  </div>
  <!--<%= link_to root_path do %>
  <%= image_tag '' ,class: "link-category1"%>

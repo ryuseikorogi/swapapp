@@ -2,6 +2,11 @@ header{
   z-index:1;
 }
 
+body{
+  color: #505962;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .top-image-container {
     width: 100%; /*幅いっぱい!の時は100%*/
     height: 100vh;/*画面に対しての高さ*/
@@ -67,58 +72,114 @@ height: 15%;
 
 .trigger-container {
   width:100%;
-  height:auto;
+  height:;
 }
 
-.menu-trigger::after {
+/*以下ハンバーガーメニューのcss*/
+
+/*ページ全体とヘッダー部*/
+* {
+  margin: 0;
+  padding: 0;
+  }
+body {
+  /*ページ全体の背景色*/
+  background: #b4ada9;
+}
+header {
+  /*ヘッダーを固定*/
+  position: fixed;
+  width: 100%;
+  height: 90px;
+}
+
+/*以下ナビメニュー*/
+#nav{
   position: absolute;
-  top: 50%;
-  left: 50%;
+ top: 0;
+/*ナビメニューを左に隠した状態になる*/
+  left: -40%;
+  width: 40%;
+  height: 100vh;
+  background: #ffffff;
+ /*０.7秒かけてナビメニューがスライドする*/
+  transition: .7s;
+}
+#nav ul{
+  padding-top: 80px;
+}
+#nav ul li{
+  list-style-type: none;
+  font-size: 20px;
+}
+#nav a{
   display: block;
-  content: '';
-  width: 84px;
-  height: 84px;
-  margin: -45px 0 0 -45px;
-  border-radius: 50%;
-  border: 4px solid transparent;
-  transition: all .75s;
+
+  text-decoration: none;
+  color: #000000;
+  margin: 0 15px;
+  padding: 10px;
+  transition: .5s;
 }
-.menu-trigger.active span:nth-of-type(1) {
-  transform: translateY(20px) rotate(-45deg);
-}
-.menu-trigger.active span:nth-of-type(2) {
-  left: 60%;
-  opacity: 0;
-  animation: active-menu-bar02 .8s forwards;
+#nav li a:hover{
+  color: #ffffff;
+  background: #cd5c5c;
+  border-bottom: none;
 }
 
-@keyframes active-menu-bar02 {
-  100% {
-    height: 0;
-  }
+/*ハンバーガーメニューのアイコン*/
+#hamburger {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+  transition: 1s;
 }
-.menu-trigger.active span:nth-of-type(3) {
-  transform: translateY(-20px) rotate(45deg);
+
+/*線の縦幅色など*/
+.inner_line {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #ffffff;
+  transition: 1s;
+  border-radius: 4px;
 }
-.menu-trigger.active::after {
-  animation: circle .4s .25s forwards;
+
+/*ハンバーガーの横線*/
+#line1 {
+  top: 0;
 }
-@keyframes circle {
-  0% {
-    border-color: transparent;
-    transform: rotate(0);
-  }
-  25% {
-    border-color: transparent #fff transparent transparent;
-  }
-  50% {
-    border-color: transparent #fff #fff transparent;
-  }
-  75% {
-    border-color: transparent #fff #fff #fff;
-  }
-  100% {
-    border-color: #fff;
-    transform: rotate(-680deg);
-  }
+#line2 {
+  top: 20px;
 }
+#line3 {
+  bottom: 0px;
+}
+
+/*ハンバーガーメニューの動き*/
+.in{
+  transform: translateX(100%);
+}
+.line_1,.line_2,.line_3{
+  background: #000000;
+}
+.line_1 {
+/*-45度回転させる*/
+  transform: rotate(-45deg);
+  top: 0;
+}
+.line_2 {
+  opacity: 0;
+}
+.line_3 {
+/*45度回転させる*/
+  transform: rotate(45deg);
+  bottom: 0;
+}
+ 
