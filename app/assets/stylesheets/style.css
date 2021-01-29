@@ -1,5 +1,9 @@
 	
 /* リセットCSS */
+header{
+  z-index:1;
+}
+
 body {
   font-size: 14px;
   color: #333;

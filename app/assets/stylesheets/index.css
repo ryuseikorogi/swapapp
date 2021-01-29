@@ -4,23 +4,49 @@ header{
 
 body{
   color: #505962;
-  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.first-message {
+position:relative;
+height :15%;
+width :34%;
+}
+.first-message p{
+  font-family: 'Noto Sans JP', メイリオ;
+  font-size:1.5rem;
+  margin-left: 3%;
 }
 
 .top-image-container {
     width: 100%; /*幅いっぱい!の時は100%*/
-    height: 100vh;/*画面に対しての高さ*/
+    height: 88vh;/*画面に対しての高さ*/
     background: url("for-swapapp.jpg") no-repeat center/cover;
     z-index:0;
 }
 
-.message {
+.message-container {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.message1 {
 position:relative;
+margin-right:2%;
 text-align-last: end;
 font-family: fantasy;
-float
 }
-.message a {
+.message2 {
+  position:relative;
+  margin-right:2%;
+  text-align-last: end;
+  font-family: fantasy;
+  }
+.message1 a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.message2 a {
   text-decoration: none;
   color: #000000;
 }
@@ -129,9 +155,10 @@ header {
 
 /*ハンバーガーメニューのアイコン*/
 #hamburger {
+  z-index: 999;
   display: block;
-  position: absolute;
-  top: 20px;
+  position: relative;
+  top: 100px;
   left: 30px;
   width: 50px;
   height: 44px;
