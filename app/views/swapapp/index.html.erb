@@ -1,63 +1,46 @@
- <header>
+<header>
+  <div class="first-message">
+    <p>SwapApp</p>
+  </div>
+  <div class="hero-image">
+    <!-- ハンバーガーメニューのアイコン -->
+    <div id="hamburger">
+      <!-- 1番上の線 -->
+      <span class="inner_line" id="line1"></span>
+      <!-- 真ん中の線 -->
+      <span class="inner_line" id="line2"></span>
 
-   <title>swapapp</title>
+      <!-- 1番下の線 -->
+      <span class="inner_line" id="line3"></span>
+    </div>
+    <% if user_signed_in? %>
+    <div class="message">
+      <%= "#{current_user.nickname} is already logged in." %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+    <%= link_to root_path do %>
+    <% image_tag 'note-pencil.jpeg' ,class: "link-category1"%>
+    <% end %>
 
-   <div class="first-message">
-     <p>あなたの欲しいがきっと見つかる</p>
-   </div>
-
-   <% if user_signed_in? %>
-   <div class="message">
-     <%= "#{current_user.nickname} is already logged in." %>
-     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-   </div>
-
-   <%= link_to root_path do %>
-   <%= image_tag 'note-pencil.jpeg' ,class: "link-category1"%>
-   <% end %>
-
-   <% else %>
-   <div class="message-container">
-     <div class="message1">
-       <%= link_to "Create your account!", new_user_registration_path %>
-     </div>
-     <div class="message2">
-       <%= link_to "Login", new_user_session_path %>
-     </div>
-   </div>
-
- </header>
-
- <div class="trigger-container">
- </div>
-
- <!-- ナビメニュー -->
- <nav id="nav">
-   <ul>
-     <li><a href="#">SUMPLE1</a></li>
-     <li><a href="#">SUMPLE2</a></li>
-     <li><a href="#">SUMPLE3</a></li>
-   </ul>
- </nav>
-
- <!-- ハンバーガーメニュー
- のアイコン -->
- <div id="hamburger">
-
-   <!-- 1番上の線 -->
-   <span class="inner_line" id="line1"></span>
-
-   <!-- 真ん中の線 -->
-   <span class="inner_line" id="line2"></span>
-
-   <!-- 1番下の線 -->
-   <span class="inner_line" id="line3"></span>
- </div>
-
- <div class="top-image-container">
- </div>
- <!--<%= link_to root_path do %>
- <%= image_tag '' ,class: "link-category1"%>
- -->
- <% end %>
- <% end %>
+    <% else %>
+    <div class="message-container">
+      <div class="message1">
+        <%= link_to "Create your account!", new_user_registration_path %>
+      </div>
+      <div class="message2">
+        <%= link_to "Login", new_user_session_path %>
+      </div>
+    </div>
+    <% end %>
+    <!-- ナビメニュー -->
+    <nav id="nav">
+      <ul>
+        <li><a href="#">SUMPLE1</a></li>
+        <li><a href="#">SUMPLE2</a></li>
+        <li><a href="#">SUMPLE3</a></li>
+      </ul>
+    </nav>
+</header>
+<h1>aaa</h1>
+<%#= link_to root_path do %>
+<%#= image_tag '' ,class: "link-category1"%>
