@@ -2,7 +2,25 @@
   <div class="box">
     <div class="first-message">
       <p>SwapApp</p>
+      <!-- ハンバーガーメニューのアイコン -->
+      <div class="hamburger" id="hamburger">
+        <!-- 1番上の線 -->
+        <span class="inner_line" id="line1"></span>
+        <!-- 真ん中の線 -->
+        <span class="inner_line" id="line2"></span>
+
+        <!-- 1番下の線 -->
+        <span class="inner_line" id="line3"></span>
+      </div>
     </div>
+    <!-- ナビメニュー -->
+    <nav id="nav">
+      <ul>
+        <li><a href="#">SUMPLE1</a></li>
+        <li><a href="#">SUMPLE2</a></li>
+        <li><a href="#">SUMPLE3</a></li>
+      </ul>
+    </nav>
     <% if user_signed_in? %>
     <div class="message">
       <%= "#{current_user.nickname} is already logged in." %>
@@ -21,27 +39,10 @@
         <%= link_to "Login", new_user_session_path %>
       </div>
     </div>
-    <!-- ハンバーガーメニューのアイコン -->
-    <div id="hamburger">
-      <!-- 1番上の線 -->
-      <span class="inner_line" id="line1"></span>
-      <!-- 真ん中の線 -->
-      <span class="inner_line" id="line2"></span>
-
-      <!-- 1番下の線 -->
-      <span class="inner_line" id="line3"></span>
-    </div>
-    <% end %>
-    <!-- ナビメニュー -->
-    <nav id="nav">
-      <ul>
-        <li><a href="#">SUMPLE1</a></li>
-        <li><a href="#">SUMPLE2</a></li>
-        <li><a href="#">SUMPLE3</a></li>
-      </ul>
-    </nav>
-    <div class="hero-image">
-    </div>
+  </div>
+  <% end %>
+  <div class="hero-image">
+  </div>
   </div>
 </header>
 <h1>aaa</h1>
