@@ -1,17 +1,17 @@
 <header>
   <div class="box">
+    <!-- ハンバーガーメニューのアイコン -->
+    <div class="hamburger" id="hamburger">
+      <!-- 1番上の線 -->
+      <span class="inner_line" id="line1"></span>
+      <!-- 真ん中の線 -->
+      <span class="inner_line" id="line2"></span>
+
+      <!-- 1番下の線 -->
+      <span class="inner_line" id="line3"></span>
+    </div>
     <div class="first-message">
       <p>SwapApp</p>
-      <!-- ハンバーガーメニューのアイコン -->
-      <div class="hamburger" id="hamburger">
-        <!-- 1番上の線 -->
-        <span class="inner_line" id="line1"></span>
-        <!-- 真ん中の線 -->
-        <span class="inner_line" id="line2"></span>
-
-        <!-- 1番下の線 -->
-        <span class="inner_line" id="line3"></span>
-      </div>
     </div>
     <!-- ナビメニュー -->
     <nav id="nav">
@@ -29,7 +29,6 @@
     <%= link_to root_path do %>
     <% image_tag 'note-pencil.jpeg' ,class: "link-category1"%>
     <% end %>
-
     <% else %>
     <div class="message-container">
       <div class="message1">
@@ -41,8 +40,8 @@
     </div>
   </div>
   <% end %>
-  <div class="hero-image">
   </div>
+  <div class="hero-image">
   </div>
 </header>
 <h1>aaa</h1>
