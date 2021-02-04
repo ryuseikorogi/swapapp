@@ -12,23 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2021_01_17_102752) do
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
-    t.string "item_name", null: false
-    t.string "item_text", null: false
-    t.string "item_condition_id", null: false
-    t.string "category_id", null: false
-    t.string "days_to_ship_id", null: false
-    t.string "shipping_prefecture_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_items_on_item_id"
-  end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
+    t.bigint "user_id"
+    t.string "post_name", null: false
+    t.string "post_discription", null: false
+    t.string "prefecture_id", null: false
+    t.string "days_arrive_id", null: false
+    t.string "post_condition_id", null: false
+    t.string "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,26 +43,5 @@ ActiveRecord::Schema.define(version: 2021_01_17_102752) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "users in", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "id", null: false, auto_increment: true
-    t.string "first_name", null: false
-    t.string "family_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "family_name_kana", null: false
-    t.string "nickname", null: false
-    t.string "password", null: false
-    t.integer "age", null: false
-    t.date "birth_day", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "items", "items"
+  add_foreign_key "posts", "users"
 end

@@ -49,12 +49,12 @@ Things you may want to cover:
 ｜ Column | Type | options |
 ｜ ------------------ | ---------- | ------------------------------ |
 ｜ cateory_id | integer | null: false |
-｜ name | string | null: false |
+｜ post_name | string | null: false |
 | user | references | null: false, foreign_key: true |
-| post_condition_id | integer | null: false |
-| prefecture_id | integer | null: false |
-| days_arrive_item_id | integer | null: false |
-| post_discription | text | null: false |
+| post_condition_id | string | null: false |
+| prefecture_id | string | null: false |
+| days_arrive_id | string | null: false |
+| post_discription | string | null: false |
 
 ### Assotiation
 
