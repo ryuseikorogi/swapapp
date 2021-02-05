@@ -1,0 +1,2 @@
+class PostsAddress < ApplicationRecord
+end
