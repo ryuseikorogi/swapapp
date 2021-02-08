@@ -1,2 +1,3 @@
 class CategoryPost < ApplicationRecord
+  
 end

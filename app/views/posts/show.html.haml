@@ -1,0 +1,9 @@
+itemcomment__box__content
+  - if current_user
+    = form_with(model:[@item, @comment], class: "message-form") do |form|
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      = form.text_area :text, {class: "textbox"}
+      %input{type:"submit", class:"form__submit", value:"コメントする"}
+  - else
+    %strong
+      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable
          
          has_many :posts
+         has_many :comments, dependent: :destroy
 
          with_options presence: true do
          validates :nickname
