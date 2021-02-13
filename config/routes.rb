@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :donations, only: :index
   resources :posts do
   resources :comments, only: :create
+ end
 end
